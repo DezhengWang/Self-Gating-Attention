@@ -3,7 +3,7 @@
 # Self-Gating-Attention
 Self-Gating Attention for Forecasting Time Series
 
-<img src="https://github.com/DezhengWang/Self-Gating-Attention/blob/main/alpha_v.png" alt="Self-gating attention mechanism. The symbol ‘?’ indicates whether sparsity is required." width="200" />
+<img src="https://github.com/DezhengWang/Self-Gating-Attention/blob/main/alpha_v.png" alt="Self-gating attention mechanism." width="200" />
 </div>
 
 Unlike standard self-attention, Self-Gating-Attention (SGA) does not rely on query-key similarity. Instead, it computes attention scores directly from the input. This simplified architecture improves computational efficiency while preserving competitive predictive performance, particularly in long-range forecasting scenarios. The highlights are as follows:
