@@ -3,7 +3,7 @@
 # Self-Gating-Attention
 Self-Gating Attention for Time Series Forecasting
 
-<img src="https://github.com/DezhengWang/Self-Gating-Attention/blob/main/fig_sga.png" alt="Self-gating attention mechanism." width="300" />
+<img src="https://github.com/DezhengWang/Self-Gating-Attention/blob/main/Fig_sga.png" alt="Self-gating attention mechanism." width="300" />
 
 </div>
 
