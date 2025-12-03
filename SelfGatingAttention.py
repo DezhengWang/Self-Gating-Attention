@@ -100,7 +100,7 @@ class GatingAttentionLayer(nn.Module):
     """
 
     def __init__(self, embed_dim, num_heads, enc_in=1,
-                 alpha_size=(96, 96), d_values=None,
+                 alpha_size=(8, 96, 96), d_values=None,
                  cross_attention=False, output_attention=False, dropout_alpha=0.1, dropout_data=0.1,
                  is_sparse=True, topk_ratio=0.1):
         super().__init__()
