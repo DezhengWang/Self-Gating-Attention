@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 from math import sqrt
 import torch.nn.functional as F
-import pywt
 
 
 class GatingAttention(nn.Module):
