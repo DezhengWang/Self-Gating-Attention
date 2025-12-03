@@ -92,7 +92,7 @@ class GatingAttentionLayer(nn.Module):
         embed_dim (int): Data embedding dimension.
         num_heads (int): Number of attention heads.
         enc_in (int): num variables.
-        alpha_size (Tuple[int, int]): Shape (head, ori_time_dim, new_time_dim) for alpha projection.
+        alpha_size : Shape (head, ori_time_dim, new_time_dim) for alpha projection.
         d_values (int, optional): Value projection size per head.
         cross_attention (bool): Whether to use cross-attention by concat query and value.
         output_attention (bool): Whether to output attention weights.
