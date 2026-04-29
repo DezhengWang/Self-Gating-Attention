@@ -1,0 +1,129 @@
+export CUDA_VISIBLE_DEVICES=0
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --seq_len 96 \
+  --pred_len 96 \
+  --e_layers 1 \
+  --d_model 32 \
+  --d_ff 32 \
+  --learning_rate 0.006\
+  --batch_size 256 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "bior3.1" \
+  --m 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $2 \
+  --alpha 0.3 \
+  --l1_weight 0.0005 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.5 \
+  --dropout_data 0.5
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --seq_len 96 \
+  --pred_len 192 \
+  --e_layers 1 \
+  --d_model 32 \
+  --d_ff 32 \
+  --learning_rate 0.006\
+  --batch_size 256 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "bior3.1" \
+  --m 1 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $2 \
+  --alpha 0.0 \
+  --l1_weight 0.005 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.5 \
+  --dropout_data 0.5
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --seq_len 96 \
+  --pred_len 336 \
+  --e_layers 1 \
+  --d_model 64 \
+  --d_ff 64 \
+  --learning_rate 0.006\
+  --batch_size 128 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "bior3.3" \
+  --m 1 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $2 \
+  --alpha 0.6 \
+  --l1_weight 5e-5 \
+  --topk_ratio 0.8 \
+  --dropout_alpha 0.5 \
+  --dropout_data 0.5
+
+python -u run.py \
+  --is_training 1 \
+  --lradj 'TST' \
+  --patience 3 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --seq_len 96 \
+  --pred_len 720 \
+  --e_layers 1 \
+  --d_model 96 \
+  --d_ff 96 \
+  --learning_rate 0.003\
+  --batch_size 256 \
+  --fix_seed 2025 \
+  --use_norm 1 \
+  --wv "db1" \
+  --m 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $2 \
+  --alpha 1.0 \
+  --l1_weight 0.0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.5 \
+  --dropout_data 0.5

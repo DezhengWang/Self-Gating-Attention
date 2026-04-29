@@ -1,0 +1,815 @@
+#!/bin/bash
+export CUDA_VISIBLE_DEVICES=1
+
+
+# Run experiment on Exchange dataset
+echo "Running Exchange dataset..."
+
+python -u run.py \
+ --is_training 1 \
+ --root_path ./dataset/exchange_rate/ \
+ --data_path exchange_rate.csv \
+ --model_id Exchange \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 96 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --enc_in 8 \
+ --dec_in 8 \
+ --c_out 8 \
+ --patch_len 16 \
+ --stride 16 \
+ --factor 3 \
+ --des 'Exp' \
+ --itr $3 \
+ --gpu 0 \
+ --topk_ratio 0.1 \
+ --dropout_alpha 0.1 \
+ --dropout_data 0.1
+
+python -u run.py \
+ --is_training 1 \
+ --root_path ./dataset/exchange_rate/ \
+ --data_path exchange_rate.csv \
+ --model_id Exchange \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 192 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --enc_in 8 \
+ --dec_in 8 \
+ --c_out 8 \
+ --patch_len 16 \
+ --stride 16 \
+ --factor 3 \
+ --des 'Exp' \
+ --itr $3 \
+ --gpu 0 \
+ --topk_ratio 0.1 \
+ --dropout_alpha 0.1 \
+ --dropout_data 0.1
+
+
+python -u run.py \
+ --is_training 1 \
+ --root_path ./dataset/exchange_rate/ \
+ --data_path exchange_rate.csv \
+ --model_id Exchange \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 336 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --enc_in 8 \
+ --dec_in 8 \
+ --c_out 8 \
+ --patch_len 16 \
+ --stride 16 \
+ --factor 3 \
+ --des 'Exp' \
+ --itr $3 \
+ --gpu 0 \
+ --topk_ratio 0.5 \
+ --dropout_alpha 0.2 \
+ --dropout_data 0.1
+
+
+python -u run.py \
+ --is_training 1 \
+ --root_path ./dataset/exchange_rate/ \
+ --data_path exchange_rate.csv \
+ --model_id Exchange \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 720 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --enc_in 8 \
+ --dec_in 8 \
+ --c_out 8 \
+ --patch_len 16 \
+ --stride 16 \
+ --factor 3 \
+ --des 'Exp' \
+ --itr $3 \
+ --gpu 0 \
+ --topk_ratio 0.5 \
+ --dropout_alpha 0.2 \
+ --dropout_data 0.1
+
+
+
+# Run experiment on ETTh1 dataset
+echo "Running ETTh1 dataset..."
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1 \
+  --model $1 \
+  --data ETTh1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 100 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 96 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5 \
+  --dropout_alpha 0.2 \
+  --dropout_data 0.1
+
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1 \
+  --model $1 \
+  --data ETTh1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 100 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 192 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.3 \
+  --dropout_alpha 0.2 \
+  --dropout_data 0.1
+
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1 \
+  --model $1 \
+  --data ETTh1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 100 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 336 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5 \
+  --dropout_alpha 0.5 \
+  --dropout_data 0.1
+
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh1.csv \
+  --model_id ETTh1 \
+  --model $1 \
+  --data ETTh1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 100 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+
+
+# Run experiment on ETTh2 dataset
+echo "Running ETTh2 dataset..."
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh2.csv \
+  --model_id ETTh2 \
+  --model $1 \
+  --data ETTh2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 96 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+  
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh2.csv \
+  --model_id ETTh2 \
+  --model $1 \
+  --data ETTh2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 192 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+  
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh2.csv \
+  --model_id ETTh2 \
+  --model $1 \
+  --data ETTh2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 336 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTh2.csv \
+  --model_id ETTh2 \
+  --model $1 \
+  --data ETTh2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 8 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+
+# Run experiment on ETTm1 dataset
+echo "Running ETTm1 dataset..."
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm1.csv \
+  --model_id ETTm1 \
+  --model $1 \
+  --data ETTm1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 96 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm1.csv \
+  --model_id ETTm1 \
+  --model $1 \
+  --data ETTm1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 192 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5 \
+  --dropout_alpha 0.3 \
+  --dropout_data 0.1
+
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm1.csv \
+  --model_id ETTm1 \
+  --model $1 \
+  --data ETTm1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 336 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5 \
+  --dropout_alpha 0.3 \
+  --dropout_data 0.1
+
+  
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm1.csv \
+  --model_id ETTm1 \
+  --model $1 \
+  --data ETTm1 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5 \
+  --dropout_alpha 0.3 \
+  --dropout_data 0.1
+
+
+
+# Run experiment on ETTm2 dataset
+echo "Running ETTm2 dataset..."
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 96 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 192 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+  
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 336 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+
+python -u run.py \
+  --is_training 1 \
+  --root_path ./dataset/ETT-small/ \
+  --data_path ETTm2.csv \
+  --model_id ETTm2 \
+  --model $1 \
+  --data ETTm2 \
+  --features M \
+  --learning_rate 0.00005\
+  --train_epochs 10 \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --d_model 768 \
+  --n_heads 4 \
+  --d_ff 768 \
+  --dropout 0.3 \
+  --patch_len 16 \
+  --stride 16 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.1 \
+  --dropout_alpha 0.1 \
+  --dropout_data 0.1
+
+
+
+# Run experiment on Weather dataset
+echo "Running Weather dataset..."
+
+python -u run.py \
+  --is_training 1 \
+ --root_path ./dataset/weather/ \
+ --data_path weather.csv \
+ --model_id weather \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 96 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --patch_len 16 \
+ --stride 8 \
+ --factor 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5 \
+  --dropout_alpha 0.3 \
+  --dropout_data 0.1
+
+  
+python -u run.py \
+  --is_training 1 \
+ --root_path ./dataset/weather/ \
+ --data_path weather.csv \
+ --model_id weather \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 192 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --patch_len 16 \
+ --stride 8 \
+ --factor 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.3 \
+  --dropout_alpha 0.3 \
+  --dropout_data 0.1
+  
+
+python -u run.py \
+  --is_training 1 \
+ --root_path ./dataset/weather/ \
+ --data_path weather.csv \
+ --model_id weather \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 336 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --patch_len 16 \
+ --stride 8 \
+ --factor 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5\
+  --dropout_alpha 0.3 \
+  --dropout_data 0.1
+  
+
+python -u run.py \
+  --is_training 1 \
+ --root_path ./dataset/weather/ \
+ --data_path weather.csv \
+ --model_id weather \
+ --model $1 \
+ --data custom \
+ --features M \
+ --learning_rate 0.00005\
+ --train_epochs 10 \
+ --seq_len 96 \
+ --label_len 48 \
+ --pred_len 720 \
+ --e_layers 3 \
+ --d_layers 1 \
+ --d_model 768 \
+ --n_heads 4 \
+ --d_ff 768 \
+ --dropout 0.3 \
+ --patch_len 16 \
+ --stride 8 \
+ --factor 3 \
+ --enc_in 21 \
+ --dec_in 21 \
+ --c_out 21 \
+  --des 'Exp' \
+  --itr $3 \
+  --gpu 0 \
+  --topk_ratio 0.5\
+  --dropout_alpha 0.3 \
+  --dropout_data 0.1
